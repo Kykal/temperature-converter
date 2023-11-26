@@ -6,10 +6,6 @@
 import useTemperatureSearchParams from "../hooks/useTemperaturesParams";
 
 
-//Lib
-import fixNumber from "../lib/fixNumber";
-
-
 //Components
 import TemperatureOutput from "./TemperatureOutput";
 
@@ -28,17 +24,17 @@ const CelsiusOutput = (): JSX.Element => {
 		};
 
 		case 'kelvin': {
-			finalTemperature = fixNumber(temperature - 273.15);
+			finalTemperature = temperature - 273.15;
 			break;
 		};
 
 		case 'fahrenheit': {
-			finalTemperature = fixNumber((temperature - 32) * 5/9);
+			finalTemperature = (temperature - 32) * 5/9;
 			break;
 		};
 
 		case 'rankine': {
-			finalTemperature = fixNumber( (temperature - 491.67) * 5/9 );
+			finalTemperature = (temperature - 491.67) * 5/9;
 			break;
 		};
 	};

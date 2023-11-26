@@ -17,11 +17,17 @@ const TemperatureOutput = (props: TemperatureOutput): JSX.Element => {
 
 	const output = `${props.temperature} ${props.acronym}`;
 
+	const onClickHandler = () => {
+		navigator.clipboard.writeText(props.temperature.toString());
+	};
+
+
 	//Main component render
 	return (
 		<div
 			id={props.id}
 			className='temperature-container group'
+			onClick={onClickHandler}
 		>
 			<div className='temperature-label' >
 				{props.label}

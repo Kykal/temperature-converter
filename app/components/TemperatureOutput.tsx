@@ -13,24 +13,24 @@ type TemperatureOutput = {
 
 
 //Main component content
-const TemperatureOutput = (props: TemperatureOutput): JSX.Element => {
+const TemperatureOutput = ({ id,temperature,label,acronym }: TemperatureOutput): JSX.Element => {
 
-	const output = `${props.temperature} ${props.acronym}`;
+	const output = `${temperature.toFixed(3)} ${acronym}`;
 
 	const onClickHandler = () => {
-		navigator.clipboard.writeText(props.temperature.toString());
+		navigator.clipboard.writeText(temperature.toFixed(3));
 	};
 
 
 	//Main component render
 	return (
 		<div
-			id={props.id}
+			id={id}
 			className='temperature-container group'
 			onClick={onClickHandler}
 		>
 			<div className='temperature-label' >
-				{props.label}
+				{label}
 			</div>
 			<output className='temperature-output' >
 				{output}

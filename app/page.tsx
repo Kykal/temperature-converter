@@ -7,16 +7,14 @@ import TemperaturesOutput from "./components/TemperaturesOutput";
 const Page = (): JSX.Element => {
   //Main component render
   return (
-    <>
-      <main className='container mx-auto' >
-        <div className='px-4 space-y-8' >
-          <div className="md:card md:py-2 md:px-4">
-            <TemperatureForm />
-          </div>
-          <TemperaturesOutput />
+    <main className='container mx-auto' >
+      <div className='px-4 space-y-8' >
+        <div className="md:card md:py-2 md:px-4">
+          <TemperatureForm />
         </div>
-      </main>
-    </>
+        <TemperaturesOutput />
+      </div>
+    </main>
   );
 };
 

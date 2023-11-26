@@ -46,7 +46,7 @@ const TemperatureForm = (): JSX.Element => {
 			>
 				<option value="celsius">ºC</option>
 				<option value="kelvin">K</option>
-				<option value="farhenheit">ºF</option>
+				<option value="fahrenheit">ºF</option>
 				<option value="rankine">R</option>
 			</select>
 			<button

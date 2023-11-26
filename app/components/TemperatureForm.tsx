@@ -23,32 +23,34 @@ const TemperatureForm = (): JSX.Element => {
 	//Main component render
 	return (
 		<form action={temperatureAction} className='space-y-4 md:pb-3' >
-			<fieldset className='input-fieldset' >
-				<legend className='input-legend' >
-					Temperature
-				</legend>
-				<div className='input-container' >
-					<input
-						type="number"
-						name="temperature-value"
-						id="temperature-value"
-						className='temperature-input'
-						defaultValue={temperature || 0}
-					/>
-				</div>
-			</fieldset>
-			<select
-				name="temperature-source-type"
-				id="temperature-source-type"
-				className='h-10'
+			<div className='flex flex-col md:flex-row gap-4 md:items-end' >
+				<fieldset className='input-fieldset' >
+					<legend className='input-legend' >
+						Temperature
+					</legend>
+					<div className='input-container' >
+						<input
+							type="number"
+							name="temperature-value"
+							id="temperature-value"
+							className='temperature-input'
+							defaultValue={temperature || 0}
+						/>
+					</div>
+				</fieldset>
+				<select
+					name="temperature-source-type"
+					id="temperature-source-type"
+					className='h-11 md:w-1/4 cursor-pointer'
 
-				defaultValue={sourceType || 'celsius'}
-			>
-				<option value="celsius">ºC</option>
-				<option value="kelvin">K</option>
-				<option value="fahrenheit">ºF</option>
-				<option value="rankine">R</option>
-			</select>
+					defaultValue={sourceType || 'celsius'}
+				>
+					<option value="celsius">ºC</option>
+					<option value="kelvin">K</option>
+					<option value="fahrenheit">ºF</option>
+					<option value="rankine">R</option>
+				</select>
+			</div>
 			<button
 				type='submit'
 				className='bg-black'

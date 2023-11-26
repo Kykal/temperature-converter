@@ -19,22 +19,22 @@ const RankineOutput = (): JSX.Element => {
 
 	switch (sourceType) {
 		case 'celsius': {
-			finalTemperature = temperature + 273.15;
+			finalTemperature = temperature * 9/5 + 491.67;
 			break;
 		};
 
 		case 'kelvin': {
-			finalTemperature = temperature;
+			finalTemperature = temperature * 1.8;
 			break;
 		};
 
 		case 'fahrenheit': {
-			finalTemperature = (temperature - 32) * 5/9 + 273.15;
+			finalTemperature = temperature + 459.67;
 			break;
 		};
 
 		case 'rankine': {
-			finalTemperature = temperature * 5/9;
+			finalTemperature = temperature;
 			break;
 		};
 	};
@@ -44,7 +44,7 @@ const RankineOutput = (): JSX.Element => {
 	return (
 		<TemperatureOutput
 			id='rankine'
-			temperature={temperature}
+			temperature={finalTemperature}
 			label='Rankine'
 			acronym='R'
 		/>

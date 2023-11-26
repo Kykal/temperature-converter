@@ -33,6 +33,8 @@ const TemperatureForm = (): JSX.Element => {
 							type="number"
 							name="temperature-value"
 							id="temperature-value"
+							required
+							step='any'
 							className='temperature-input'
 							defaultValue={temperature || 0}
 						/>

@@ -15,10 +15,12 @@ type TemperatureOutput = {
 //Main component content
 const TemperatureOutput = ({ id,temperature,label,acronym }: TemperatureOutput): JSX.Element => {
 
-	const output = `${temperature.toFixed(3)} ${acronym}`;
+	const fixedTemperature = temperature.toFixed(3);
+
+	const output = `${fixedTemperature} ${acronym}`;
 
 	const onClickHandler = () => {
-		navigator.clipboard.writeText(temperature.toFixed(3));
+		navigator.clipboard.writeText(fixedTemperature);
 	};
 
 

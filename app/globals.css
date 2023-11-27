@@ -31,11 +31,15 @@
     @apply
       w-full
       bg-black
+      disabled:bg-black/25
+      disabled:text-white/25
       py-2
       rounded
       border
       border-neutral-500
       active:translate-y-0.5
+      disabled:active:translate-y-0
+      disabled:cursor-wait
     ;
   }
 

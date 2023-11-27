@@ -29,7 +29,7 @@ const TemperatureOutput = ({ id,temperature,label,acronym }: TemperatureOutput):
 	const [ clicked, setClicked ] = useState<boolean>(false);
 
 
-	const fixedTemperature = temperature.toFixed(3);
+	const fixedTemperature = Number(temperature.toFixed(3)).toString();
 
 	const output = `${fixedTemperature} ${acronym}`;
 

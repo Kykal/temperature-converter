@@ -1,6 +1,5 @@
 //NextJS
 'use client';
-import { useSearchParams } from 'next/navigation';
 
 
 //React
@@ -18,6 +17,11 @@ const TemperatureForm = (): JSX.Element => {
 	const { pending } = useFormStatus();
 
 	const { temperature, sourceType, } = useTemperatureSearchParams();
+
+
+	const buttonLabel = pending
+		? 'Converting...'
+		: 'Convert';
 
 
 	//Main component render
@@ -55,10 +59,11 @@ const TemperatureForm = (): JSX.Element => {
 			</div>
 			<button
 				type='submit'
-				className='bg-black'
+				className='bg-black disabled:bg-black/25'
+				disabled={pending}
 				aria-disabled={pending}
 			>
-				Convert
+				{buttonLabel}
 			</button>
 		</form>
 	);

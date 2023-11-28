@@ -13,16 +13,9 @@ import useTemperatureSearchParams from '../hooks/useTemperaturesParams';
 
 //Main component content
 const TemperatureForm = (): JSX.Element => {
-
-	const { pending } = useFormStatus();
-
+	
 	const { temperature, sourceType, } = useTemperatureSearchParams();
-
-
-	const buttonLabel = pending
-		? 'Converting...'
-		: 'Convert';
-
+	
 
 	//Main component render
 	return (
@@ -57,17 +50,33 @@ const TemperatureForm = (): JSX.Element => {
 					<option value="rankine">R</option>
 				</select>
 			</div>
-			<button
-				type='submit'
-				className='bg-black disabled:bg-black/25'
-				disabled={pending}
-				aria-disabled={pending}
-			>
-				{buttonLabel}
-			</button>
+			<SubmitButton />
 		</form>
 	);
 };
 
 
 export default TemperatureForm; //Export main component
+
+
+
+const SubmitButton = () => {
+
+	const { pending } = useFormStatus();
+
+	const buttonLabel = pending
+		? 'Converting...'
+		: 'Convert';
+	
+
+	return(
+		<button
+			type='submit'
+			className='bg-black disabled:bg-black/25'
+			disabled={pending}
+			aria-disabled={pending}
+		>
+			{buttonLabel}
+		</button>
+	);
+};

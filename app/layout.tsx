@@ -7,6 +7,7 @@ export const viewport = sharedViewport;
 //Styles
 import './globals.css'
 import { Roboto } from 'next/font/google'
+import type { ReactNode } from 'react';
 import sharedViewport from './sharedViewport';
 const roboto = Roboto({
   subsets: ['latin'],
@@ -21,7 +22,7 @@ const roboto = Roboto({
 
 //Typings
 type RootLayout = {
-  children: JSX.Element;
+  children: ReactNode;
 };
 
 

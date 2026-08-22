@@ -21,7 +21,7 @@ const roboto = Roboto({
 
 //Typings
 type RootLayout = {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 
